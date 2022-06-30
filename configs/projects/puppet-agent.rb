@@ -29,6 +29,8 @@ project "puppet-agent" do |proj|
   if platform.is_macos?
     proj.extra_file_to_sign File.join(proj.bindir, 'puppet')
     proj.extra_file_to_sign File.join(proj.bindir, 'pxp-agent')
+    proj.extra_file_to_sign File.join(proj.bindir, 'facter')
+    proj.extra_file_to_sign File.join(proj.bindir, 'hiera')
     proj.extra_file_to_sign File.join(proj.bindir, 'wrapper.sh')
     proj.signing_hostname 'osx-signer-prod-2.delivery.puppetlabs.net'
     proj.signing_username 'jenkins'
