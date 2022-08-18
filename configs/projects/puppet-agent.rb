@@ -8,6 +8,7 @@ project "puppet-agent" do |proj|
   pxp_agent_details = JSON.parse(File.read('configs/components/pxp-agent.json'))
   agent_branch = 'main'
 
+  
   settings[:puppet_runtime_version] = runtime_details['version']
   settings[:puppet_runtime_location] = runtime_details['location']
   settings[:puppet_runtime_basename] = "agent-runtime-#{agent_branch}-#{runtime_details['version']}.#{platform.name}"
